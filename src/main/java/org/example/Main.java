@@ -14,14 +14,12 @@ public class Main {
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
 
-
                 String first = "";
-                int smallest = data.length()+1;
+                int smallest = data.length() + 1;
                 String second = "";
                 int largest = -1;
 
-                for (Digit digit:
-                     Digit.values()) {
+                for (Digit digit : Digit.values()) {
                     if (data.indexOf(digit.wordRepresentation) >= 0 && data.indexOf(digit.wordRepresentation) < smallest) {
                         smallest = data.indexOf(digit.wordRepresentation);
                         first = digit.digitRepresentation;
