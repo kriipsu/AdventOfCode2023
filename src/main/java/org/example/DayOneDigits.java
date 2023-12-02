@@ -10,7 +10,7 @@ public class DayOneDigits {
         int sum = 0;
 
         try {
-            File myObj = new File("src/main/resources/input.txt");
+            File myObj = new File("src/main/resources/inputDayOne.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();

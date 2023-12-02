@@ -1,13 +1,14 @@
 package org.example;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
-        //DayOneDigits.DayOneDigits();
+        System.out.print("Day one solution: ");
+        DayOneDigits.DayOneDigits();
 
 
+        System.out.print("Day two solution: ");
+        GameDayTwoPartOne GameDayTwo = new GameDayTwoPartOne();
+        GameDayTwo.loopThroughRounds();
+        System.out.println(GameDayTwo.getSumOfID());
     }
 }
