@@ -1,4 +1,4 @@
-package org.example;
+package org.example.DayTwo;
 
 public class GameRoundSet {
     private int red;

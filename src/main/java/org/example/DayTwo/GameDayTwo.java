@@ -1,17 +1,20 @@
-package org.example;
+package org.example.DayTwo;
 
-import java.util.ArrayList;
+import org.example.FileReaderByLine;
+
 import java.util.List;
 
-public class GameDayTwoPartOne {
+public class GameDayTwo {
     private FileReaderByLine fileReaderByLine;
     private List<String> listOfInput;
     private int sumOfID;
+    private int productOfCubes;
 
-    public GameDayTwoPartOne() {
+    public GameDayTwo() {
         this.fileReaderByLine = new FileReaderByLine("src/main/resources/inputDayTwo.txt");;
         this.listOfInput = fileReaderByLine.getInputList();
         this.sumOfID = 0;
+        this.productOfCubes = 0;
     }
 
     public void loopThroughRounds() {
@@ -21,10 +24,15 @@ public class GameDayTwoPartOne {
             if(gameRound.isGamePossible()) {
                 this.sumOfID += gameRound.getRoundId();
             }
+            this.productOfCubes += gameRound.powerOfCubes();
         }
     }
 
     public int getSumOfID() {
         return sumOfID;
+    }
+
+    public int getProductOfCubes() {
+        return productOfCubes;
     }
 }

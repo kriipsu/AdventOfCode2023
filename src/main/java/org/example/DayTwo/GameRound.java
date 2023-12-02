@@ -1,4 +1,4 @@
-package org.example;
+package org.example.DayTwo;
 
 import java.util.ArrayList;
 
@@ -37,7 +37,7 @@ public class GameRound {
                 String[] tempCube = cube.split(" ");
                 switch (tempCube[1]) {
                     case "red":
-                        red = Integer.parseInt(tempCube [0]);
+                        red = Integer.parseInt(tempCube[0]);
                         break;
                     case "green":
                         green = Integer.parseInt(tempCube[0]);
@@ -57,5 +57,38 @@ public class GameRound {
 
     public int getRoundId() {
         return roundId;
+    }
+
+    public int powerOfCubes() {
+        int red = 0;
+        int green = 0;
+        int blue = 0;
+
+        for (String set:
+                roundSetInfo) {
+            String[] tempSet = set.split(", ");
+            for (String cube:
+                    tempSet) {
+                String[] tempCube = cube.split(" ");
+                switch (tempCube[1]) {
+                    case "red":
+                        if (Integer.parseInt(tempCube[0]) > red) {
+                            red = Integer.parseInt(tempCube[0]);
+                        }
+                        break;
+                    case "green":
+                        if (Integer.parseInt(tempCube[0]) > green) {
+                            green = Integer.parseInt(tempCube[0]);
+                        }
+                        break;
+                    case "blue":
+                        if (Integer.parseInt(tempCube[0]) > blue) {
+                            blue = Integer.parseInt(tempCube[0]);
+                        }
+                        break;
+                }
+            }
+        }
+        return red * green * blue;
     }
 }
