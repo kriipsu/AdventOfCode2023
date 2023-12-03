@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.DayOne.DayOneDigits;
+import org.example.DayThree.EngineSchema;
 import org.example.DayTwo.GameDayTwo;
 
 public class Main {
@@ -13,5 +14,10 @@ public class Main {
         GameDayTwo.loopThroughRounds();
         //System.out.println(GameDayTwo.getSumOfID());
         System.out.println(GameDayTwo.getProductOfCubes());
+
+        System.out.println("Day two solution: ");
+        EngineSchema engineSchema = new EngineSchema();
+        engineSchema.generateEngineSchema();
+        engineSchema.printSchema();
     }
 }
