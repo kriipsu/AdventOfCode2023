@@ -15,9 +15,15 @@ public class Main {
         //System.out.println(GameDayTwo.getSumOfID());
         System.out.println(GameDayTwo.getProductOfCubes());
 
-        System.out.println("Day two solution: ");
+        System.out.print("Day three solution one: ");
         EngineSchema engineSchema = new EngineSchema();
         engineSchema.generateEngineSchema();
-        engineSchema.printSchema();
+        //engineSchema.printSchema();
+        engineSchema.generateParts();
+        engineSchema.setPartNumberSum();
+        System.out.println(engineSchema.getPartNumberSum());
+        System.out.print("Day three solution two: ");
+        engineSchema.calculateGearProduct();
+        System.out.println(engineSchema.getGearProductSum());
     }
 }

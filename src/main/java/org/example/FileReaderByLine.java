@@ -20,7 +20,6 @@ public class FileReaderByLine {
                 // read next line
                 line = reader.readLine();
             }
-
             reader.close();
         } catch (IOException e) {
             e.printStackTrace();
