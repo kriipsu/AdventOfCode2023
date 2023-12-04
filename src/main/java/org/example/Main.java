@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.DayFour.DayFour;
 import org.example.DayOne.DayOneDigits;
 import org.example.DayThree.EngineSchema;
 import org.example.DayTwo.GameDayTwo;
@@ -25,5 +26,14 @@ public class Main {
         System.out.print("Day three solution two: ");
         engineSchema.calculateGearProduct();
         System.out.println(engineSchema.getGearProductSum());
+
+        System.out.print("Day four solution one: ");
+        DayFour dayFour = new DayFour();
+        dayFour.loopThroughCards();
+        dayFour.setTotalScore();
+        System.out.println(dayFour.getTotalScore());
+        System.out.print("Day four solution two: ");
+        dayFour.calculateTotalTickets();
+        System.out.println(dayFour.getTicketsMapSumOfValues());
     }
 }
