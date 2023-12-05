@@ -43,6 +43,6 @@ public class Main {
         AlmanacSolver almanacSolver = new AlmanacSolver();
         almanacSolver.generateSeeds();
         //almanacSolver.printSeeds();
-        almanacSolver.calculateSeedsParameters();
+        //almanacSolver.calculateSeedsParameters();
     }
 }

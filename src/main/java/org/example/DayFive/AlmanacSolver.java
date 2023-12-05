@@ -17,12 +17,28 @@ public class AlmanacSolver {
     }
 
     public void generateSeeds() {
+        /*
         long[] seeds = longArrayFromString(input.get(0));
         this.seedsArray = new ArrayList<>();
         for (long seed:
              seeds) {
             this.seedsArray.add(new Seed(seed));
         }
+         */
+        this.seedsArray = new ArrayList<>();
+        long[] seeds = longArrayFromString(input.get(0));
+        long smallestLocation = seeds[0];
+        for (int i = 0; i < seeds.length; i = i + 2) {
+            for (long j = seeds[i]; j < seeds[i] + seeds[i+1]; j++) {
+                Seed temp = new Seed(j);
+                loopThroughMaps(temp);
+                if (loopThroughMaps(temp) < smallestLocation) {
+                    smallestLocation = loopThroughMaps(temp);
+
+                }
+            }
+        }
+        System.out.println(smallestLocation);
     }
 
     private long[] longArrayFromString(String inputString) {
@@ -61,7 +77,7 @@ public class AlmanacSolver {
         System.out.println(smallest);
     }
 
-    public void loopThroughMaps(Seed seed) {
+    public long loopThroughMaps(Seed seed) {
         long tempCoordinate = seed.getID();
         int counter = 0;
         boolean isSet = false;
@@ -87,6 +103,7 @@ public class AlmanacSolver {
         if (!isSet) {
             setSeedParameter(counter, tempCoordinate, seed);
         }
+        return seed.getLocation();
     }
 
     private void setSeedParameter(int i, long parameter, Seed seed) {
