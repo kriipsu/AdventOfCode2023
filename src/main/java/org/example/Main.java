@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.DayFive.AlmanacSolver;
 import org.example.DayFour.DayFour;
 import org.example.DayOne.DayOneDigits;
 import org.example.DayThree.EngineSchema;
@@ -7,6 +8,7 @@ import org.example.DayTwo.GameDayTwo;
 
 public class Main {
     public static void main(String[] args) {
+        /*
         System.out.print("Day one solution: ");
         DayOneDigits.DayOneDigits();
 
@@ -35,5 +37,12 @@ public class Main {
         System.out.print("Day four solution two: ");
         dayFour.calculateTotalTickets();
         System.out.println(dayFour.getTicketsMapSumOfValues());
+         */
+
+        System.out.print("Day five solution one: ");
+        AlmanacSolver almanacSolver = new AlmanacSolver();
+        almanacSolver.generateSeeds();
+        //almanacSolver.printSeeds();
+        almanacSolver.calculateSeedsParameters();
     }
 }
