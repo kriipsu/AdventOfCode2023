@@ -2,11 +2,9 @@ package org.example.DaySix;
 
 import org.example.FileReaderByLine;
 
-import java.util.ArrayList;
-
 public class RaceSolver {
-    private int[] raceTimes;
-    private int[] raceDistances;
+    private long[] raceTimes;
+    private long[] raceDistances;
     private FileReaderByLine fileReaderByLine;
     private String[] inputStringArray;
     private int record;
@@ -17,8 +15,8 @@ public class RaceSolver {
     }
 
     public void getRaceData(){
-        this.raceTimes = intArrayFromString(inputStringArray[0]);
-        this.raceDistances = intArrayFromString(inputStringArray[1]);
+        this.raceTimes = longArrayFromString(inputStringArray[0]);
+        this.raceDistances = longArrayFromString(inputStringArray[1]);
     }
 
     public void getRaceWinCount() {
@@ -36,18 +34,18 @@ public class RaceSolver {
         }
     }
 
-    private int[] intArrayFromString(String inputString) {
-        inputString = inputString.replaceAll("[^0-9]", " ");
+    private long[] longArrayFromString(String inputString) {
         inputString = inputString.replaceAll(" +", " ").trim();
+        inputString = inputString.replaceAll("[^0-9]", "").trim();
         if (inputString.isEmpty()) {
             return null;
         }
         String[] inputStringArray = inputString.split(" ");
-        int[] tempIntArray = new int[inputStringArray.length];
+        long[] tempLongArray = new long[inputStringArray.length];
         for (int i = 0; i < inputStringArray.length; i++) {
-            tempIntArray[i] = Integer.parseInt(inputStringArray[i]);
+            tempLongArray[i] = Long.parseLong(inputStringArray[i]);
         }
-        return tempIntArray;
+        return tempLongArray;
     }
 
     public int getRecord() {

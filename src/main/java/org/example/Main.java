@@ -48,7 +48,7 @@ public class Main {
         //almanacSolver.calculateSeedsParameters();
 
 
-        System.out.print("Day six solution one: ");
+        System.out.print("Day six solution two: ");
         RaceSolver raceSolver = new RaceSolver();
         raceSolver.getRaceData();
         raceSolver.getRaceWinCount();
