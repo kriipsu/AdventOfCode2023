@@ -1,7 +1,6 @@
 package org.example.DayFive;
 
 import org.example.FileReaderByLine;
-
 import java.util.ArrayList;
 
 public class AlmanacSolver {

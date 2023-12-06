@@ -3,6 +3,7 @@ package org.example;
 import org.example.DayFive.AlmanacSolver;
 import org.example.DayFour.DayFour;
 import org.example.DayOne.DayOneDigits;
+import org.example.DaySix.RaceSolver;
 import org.example.DayThree.EngineSchema;
 import org.example.DayTwo.GameDayTwo;
 
@@ -39,10 +40,18 @@ public class Main {
         System.out.println(dayFour.getTicketsMapSumOfValues());
          */
 
-        System.out.print("Day five solution one: ");
-        AlmanacSolver almanacSolver = new AlmanacSolver();
-        almanacSolver.generateSeeds();
+
+        //System.out.print("Day five solution one: ");
+        //AlmanacSolver almanacSolver = new AlmanacSolver();
+        //almanacSolver.generateSeeds();
         //almanacSolver.printSeeds();
         //almanacSolver.calculateSeedsParameters();
+
+
+        System.out.print("Day six solution one: ");
+        RaceSolver raceSolver = new RaceSolver();
+        raceSolver.getRaceData();
+        raceSolver.getRaceWinCount();
+        System.out.println(raceSolver.getRecord());
     }
 }
