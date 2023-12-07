@@ -5,7 +5,7 @@ public enum CardType {
     A("A", 14),
     K("K", 13),
     Q("Q", 12),
-    J("J", 11),
+    J("J", 1),
     T("T", 10);
 
     private String card;

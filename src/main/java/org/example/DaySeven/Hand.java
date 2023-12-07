@@ -1,7 +1,9 @@
 package org.example.DaySeven;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Hand {
     private int rank;
@@ -42,6 +44,18 @@ public class Hand {
                 this.countOfDuplicates.put(card, 1);
             } else {
                 this.countOfDuplicates.put(card, ++count);
+            }
+        }
+        if (countOfDuplicates.containsKey("J")) {
+            int countOfJacks = countOfDuplicates.get("J");
+            countOfDuplicates.remove("J");
+            if (countOfDuplicates.isEmpty()) {
+                this.countOfDuplicates.put("A", 0);
+            }
+            while (countOfJacks > 0) {
+                String temp = Collections.max(countOfDuplicates.entrySet(), Map.Entry.comparingByValue()).getKey();
+                countOfDuplicates.put(temp, countOfDuplicates.get(temp) + 1);
+                countOfJacks--;
             }
         }
 

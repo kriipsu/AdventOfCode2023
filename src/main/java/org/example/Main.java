@@ -58,7 +58,7 @@ public class Main {
         System.out.println(raceSolver.getRecord());
          */
 
-        System.out.print("Day seven solution one: ");
+        System.out.print("Day seven solution two: ");
         CamelCard camelCard = new CamelCard();
         camelCard.sortHands();
         camelCard.printScore();
