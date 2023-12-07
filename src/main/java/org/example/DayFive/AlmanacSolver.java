@@ -40,6 +40,44 @@ public class AlmanacSolver {
         System.out.println(smallestLocation);
     }
 
+    public long generateSmallestLocation() {
+        this.seedsArray = new ArrayList<>();
+        long[] seeds = longArrayFromString(input.get(0));
+        long location = 35088217;
+        long seedFromLocation = 0;
+        while(true) {
+            if (location % 10000 == 0) {
+                System.out.println(location);
+            }
+            seedFromLocation = reverseLoopThroughMaps(location);
+            for (int i = 0; i < seeds.length; i = i + 2) {
+                if (seedFromLocation >= seeds[i] && seedFromLocation <= (seeds[i] + seeds[i + 1])) {
+                    return location;
+                }
+            }
+            location++;
+        }
+    }
+
+    public long reverseLoopThroughMaps(long location) {
+        boolean isSet = false;
+        long tempCoordinate = location;
+        for (int i = input.size() - 1; i >= 3; i--) {
+            if (input.get(i).isEmpty()) {
+                isSet = false;
+            } else {
+                long[] tempArray = longArrayFromString(input.get(i));
+                if (!(tempArray == null)) {
+                    if (!isSet && tempCoordinate >= tempArray[0] && tempCoordinate <= tempArray[0] + tempArray[2] - 1) {
+                        tempCoordinate = tempCoordinate - (tempArray[0] - tempArray[1]);
+                        isSet = true;
+                    }
+                }
+            }
+        }
+        return tempCoordinate;
+    }
+
     private long[] longArrayFromString(String inputString) {
         inputString = inputString.replaceAll("[^0-9]", " ");
         inputString = inputString.replaceAll(" +", " ").trim();
