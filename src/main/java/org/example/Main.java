@@ -3,6 +3,7 @@ package org.example;
 import org.example.DayEight.NavigateWasteland;
 import org.example.DayFive.AlmanacSolver;
 import org.example.DayFour.DayFour;
+import org.example.DayNine.OasisAnalyzer;
 import org.example.DayOne.DayOneDigits;
 import org.example.DaySeven.CamelCard;
 import org.example.DaySix.RaceSolver;
@@ -66,8 +67,15 @@ public class Main {
         camelCard.printScore();
          */
 
-        System.out.print("Day seven solution one: ");
+        /*
+        System.out.print("Day eight solution one: ");
         NavigateWasteland navigateWasteland = new NavigateWasteland();
         System.out.println(navigateWasteland.followInstructions());
+         */
+
+        System.out.print("Day nine solution one: ");
+        OasisAnalyzer oasisAnalyzer = new OasisAnalyzer();
+        oasisAnalyzer.analyzeRows();
+        System.out.println(oasisAnalyzer.getSum());
     }
 }
