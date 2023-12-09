@@ -37,10 +37,10 @@ public class OasisAnalyzer {
             }
             int tempMod = 0;
             for (int j = tempArrayList.size() - 2; j > -1; j--) {
-                if (tempMod == 0) {
-                    tempMod = tempArrayList.get(j)[tempArrayList.get(j).length-1] + tempArrayList.get(j + 1)[tempArrayList.get(j).length-2];
+                if (j == tempArrayList.size() - 2) {
+                    tempMod = tempArrayList.get(j)[0] - tempArrayList.get(j + 1)[0];
                 } else {
-                    tempMod = tempMod + tempArrayList.get(j)[tempArrayList.get(j).length-1];
+                    tempMod = tempArrayList.get(j)[0] - tempMod;
                 }
             }
             this.sum += tempMod;
