@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.DayEight.NavigateWasteland;
 import org.example.DayFive.AlmanacSolver;
 import org.example.DayFour.DayFour;
 import org.example.DayOne.DayOneDigits;
@@ -58,9 +59,15 @@ public class Main {
         System.out.println(raceSolver.getRecord());
          */
 
+        /*
         System.out.print("Day seven solution two: ");
         CamelCard camelCard = new CamelCard();
         camelCard.sortHands();
         camelCard.printScore();
+         */
+
+        System.out.print("Day seven solution one: ");
+        NavigateWasteland navigateWasteland = new NavigateWasteland();
+        System.out.println(navigateWasteland.followInstructions());
     }
 }
