@@ -27,6 +27,54 @@ public class NavigateWasteland {
     }
 
 
+    public long followInstruction() {
+        ArrayList<String> locations = new ArrayList<>();
+        for (String location:
+             this.nodeID) {
+            if (location.endsWith("A")) {
+                locations.add(location);
+            }
+        }
+
+        long steps = 0;
+        int counter = 0;
+        while(true) {
+            for (int i = 0; i < locations.size(); i++) {
+                ArrayList<String> inputList = this.fileReaderByLine.getInputList();
+                if (instructions[counter].equals("L")) {
+                    String tempLine = inputList.get(Arrays.asList(nodeID).indexOf(locations.get(i))+2).substring(7,10);
+                    locations.set(i, tempLine);
+                } else {
+                    String tempLine = inputList.get(Arrays.asList(nodeID).indexOf(locations.get(i))+2).substring(12,15);
+                    locations.set(i, tempLine);
+                }
+            }
+            steps++;
+            if (steps % 100 == 0) {
+                System.out.println(steps);
+            }
+            counter++;
+
+            boolean isAtEnd = true;
+
+            for (String newLocation:
+                 locations) {
+                if (!newLocation.endsWith("Z")) {
+                    isAtEnd = false;
+                }
+            }
+
+            if (isAtEnd) {
+                System.out.println("final:");
+                return steps;
+            }
+
+            if (counter == this.instructions.length) {
+                counter = 0;
+            }
+        }
+    }
+
     public int followInstructions() {
      String tempLine = this.fileReaderByLine.getInputList().get(Arrays.asList(this.nodeID).indexOf("AAA")+2);
      String tempCurrent = tempLine.substring(0,3);

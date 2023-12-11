@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.DayEight.NavigateWasteland;
+import org.example.DayEleven.Cosmos;
 import org.example.DayFive.AlmanacSolver;
 import org.example.DayFour.DayFour;
 import org.example.DayNine.OasisAnalyzer;
@@ -68,14 +69,23 @@ public class Main {
          */
 
         /*
-        System.out.print("Day eight solution one: ");
+        System.out.print("Day eight solution two: ");
         NavigateWasteland navigateWasteland = new NavigateWasteland();
-        System.out.println(navigateWasteland.followInstructions());
+        //System.out.println(navigateWasteland.followInstructions());
+        System.out.println(navigateWasteland.followInstruction());
          */
 
-        System.out.print("Day nine solution one: ");
+        /*
+        System.out.print("Day nine solution two: ");
         OasisAnalyzer oasisAnalyzer = new OasisAnalyzer();
         oasisAnalyzer.analyzeRows();
         System.out.println(oasisAnalyzer.getSum());
+        */
+
+        System.out.println("Day eleven solution one: ");
+        Cosmos cosmos = new Cosmos();
+        System.out.println(cosmos.getSum());
+
+
     }
 }
