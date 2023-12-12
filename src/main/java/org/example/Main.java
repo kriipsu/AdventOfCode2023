@@ -82,9 +82,9 @@ public class Main {
         System.out.println(oasisAnalyzer.getSum());
         */
 
-        System.out.println("Day eleven solution one: ");
+        System.out.print("Day eleven solution two: ");
         Cosmos cosmos = new Cosmos();
-        System.out.println(cosmos.getSum());
+        System.out.println(cosmos.getNewSum());
 
 
     }

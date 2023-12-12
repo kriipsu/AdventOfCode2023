@@ -1,19 +1,27 @@
 package org.example.DayEleven;
 
 public class Galaxy {
-    private int x;
-    private int y;
+    private long x;
+    private long y;
 
-    public Galaxy(int x, int y) {
+    public Galaxy(long x, long y) {
         this.x = x;
         this.y = y;
     }
 
-    public int getX() {
+    public long getX() {
         return x;
     }
 
-    public int getY() {
+    public long getY() {
         return y;
+    }
+
+    public void setX(long x) {
+        this.x = x;
+    }
+
+    public void setY(long y) {
+        this.y = y;
     }
 }

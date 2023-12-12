@@ -3,7 +3,6 @@ package org.example.DayEleven;
 import org.example.FileReaderByLine;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Cosmos {
 
@@ -14,7 +13,9 @@ public class Cosmos {
     private ArrayList<Integer> emptyRows;
     private FileReaderByLine fileReaderByLine;
     private ArrayList<Galaxy> galaxies;
+    private ArrayList<Galaxy> originalGalaxies;
     private int sum;
+    private long newSum;
 
     public Cosmos() {
         this.fileReaderByLine = new FileReaderByLine("src/main/resources/inputDayEleven");
@@ -22,10 +23,15 @@ public class Cosmos {
         this.emptyRows = new ArrayList<>();
         this.emptyColumns = new ArrayList<>();
         setInitialMap();
-        expandMap();
-        findGalaxies();
-        this.sum = 0;
-        setSum();
+        //expandMap();
+        //findGalaxies();
+        //this.sum = 0;
+        //setSum();
+        this.newSum = 0;
+        this.originalGalaxies = new ArrayList<>();
+        this.findOriginalGalaxies();
+        this.updateGalaxies();
+        this.setNewSum();
     }
 
     public void setInitialMap() {
@@ -93,7 +99,44 @@ public class Cosmos {
         }
     }
 
+    public void findOriginalGalaxies() {
+        this.galaxies = new ArrayList<>();
+        for (int i = 0; i < this.initialMap.length; i++) {
+            for (int j = 0; j < this.initialMap[i].length; j++) {
+                if (this.initialMap[i][j].equals("#")) {
+                    this.originalGalaxies.add(new Galaxy(i, j));
+                }
+            }
+        }
+    }
+
+    public void updateGalaxies() {
+        for (Galaxy galaxy:
+             this.originalGalaxies) {
+            long tempX = galaxy.getX();
+            long tempY = galaxy.getY();
+
+            long countX = this.emptyRows.stream().filter(e -> e < tempX).count();
+            long countY = this.emptyColumns.stream().filter(e -> e < tempY).count();
+
+            galaxy.setX(tempX + countX * 999999);
+            galaxy.setY(tempY + countY * 999999);
+        }
+    }
+
+    private void setNewSum() {
+        for (int i = 0; i < this.originalGalaxies.size(); i++) {
+            for (int j = i+1; j < this.originalGalaxies.size(); j++) {
+                this.newSum += Math.abs(this.originalGalaxies.get(i).getX() - this.originalGalaxies.get(j).getX()) + Math.abs(this.originalGalaxies.get(i).getY() - this.originalGalaxies.get(j).getY());
+            }
+        }
+    }
+
     public int getSum() {
         return sum;
+    }
+
+    public long getNewSum() {
+        return newSum;
     }
 }
